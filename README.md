@@ -20,7 +20,7 @@ The objective of the CONCA script is to investigate whether the copy number of a
  ##### 2. Running The Script
  Ensure that all .txt files with the experimental condition tables are together in a folder, with the control table as the first file in the folder. Then run the following command in the terminal:
 ``
-python CONCA_script folder_name outputfile_name
+python CONCA_script.py folder_name outputfile_name
 ``
 ##### 3. Output Files
 After running the command, the user should receive 2 output files as .txt files, which can be visualized as a table.
