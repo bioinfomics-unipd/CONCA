@@ -14,17 +14,20 @@ if len(sys.argv) == 1:
 #PART 1
 
 #get list of tables from folder
-files = os.listdir(sys.argv[1])
+files = []
+for item in os.listdir(sys.argv[1]):
+	if not item.startswith('.'):
+		files.append(item)
 os.chdir(sys.argv[1])
 
 #taking input of first table (control)
-control_table = pd.read_table(files[1])
+control_table = pd.read_table(files[0])
 control_table['CN_Ctrl'] = control_table['COVERAGE']/(control_table['COVERAGE'].median())
 
 #add a column of approx copy number for each experiment
 n = len(files)
-for i in range(2,n):
-	istring = str(i-1)
+for i in range(1,n):
+	istring = str(i)
 	new_table = pd.read_table(files[i])
 	control_table['CN_Expt'+istring] = new_table['COVERAGE']/(new_table['COVERAGE'].median())
 
@@ -85,27 +88,19 @@ print(df_info)
 
 cog_series = pd.Series(df_info['db_xref'])
 cog_list = cog_series.tolist()
-print(cog_list)
 sorted_output['COGs'] = cog_list
-m = n-1
 
 response = input("Would you like to see a heatmap for a specific COG? (y/n)")
 
 while response == 'y':
-	
-	print(sorted_output)
 	
 	cog = (input("Insert the COG (example format: COG0197):" ))
 	cog_id = "COG:" + str(cog)
 	
 	ct = sorted_output.loc[sorted_output['COGs'] == cog_id]
 
-	print(ct)
-
 	del ct['COGs']
-	a = ct.iloc[:,-m:]
-	
-	print(a)
+	a = ct.iloc[:,-n:]
 	x = min(a.min())
 	y = max(a.max())
 	
@@ -113,7 +108,8 @@ while response == 'y':
 
 	fig = mapped.get_figure()
 	fig.savefig("{}_heatmap.png".format(cog),dpi = 300)
-
+	print("Heatmap saved as .png file")
+	
 	response = input("Would you like to see another heatmap? (y/n)")
 	if response == 'y':
 		fig.clf()
