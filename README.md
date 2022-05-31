@@ -1,6 +1,6 @@
 # CONCA
 ## Copy Number By Coverage Analysis
-![Screenshot 2022-05-30 at 8 55 02 PM](https://user-images.githubusercontent.com/106095564/171047633-a1a9676b-2b48-4cd7-924a-0c0b346c3186.png)
+![logo](https://user-images.githubusercontent.com/106095564/171119822-3688c77f-0a1d-4392-a99e-9a58e51020c5.png)
 
 Script for the Microbial Metagenomics laboratory, A.Y. 2021/2022.
 
