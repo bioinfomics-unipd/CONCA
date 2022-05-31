@@ -26,7 +26,7 @@ The objective of the CONCA script is to investigate whether the copy number of a
 python CONCA_script.py folder_name outputfile_name
 ``
 ##### 3. Output Files
-After running the command, the user should receive 2 output .txt files, which can be visualized as a table.
+After running the command, the user should receive 2 output .txt files, which can be visualized as tables.
 The first table, titled “outputfile_name.txt”, contains the original information from the tables plus the average copy number of each gene under each experimental condition (designated as Expt_1, Expt_2, etc.) in the order the experiments were provided in the input folder.
 The second table, titled “outputfile_name_information.txt”, contains the information provided for each gene separated by label for easy viewing.
 
