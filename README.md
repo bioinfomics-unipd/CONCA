@@ -24,10 +24,10 @@ The objective of the CONCA script is to investigate whether the copy number of a
 python CONCA_script.py folder_name outputfile_name
 ``
 ##### 3. Output Files
-After running the command, the user should receive 2 output files as .txt files, which can be visualized as a table.
-The first table, titled “output_filename.txt”, contains the original information from the tables plus the average copy number of each gene under each experimental condition (designated as Expt_1, Expt_2, etc.) in the order the experiments were provided in the input folder.
-The second table, titled “information.txt”, contains the information provided for each gene separated by label for easy viewing.
+After running the command, the user should receive 2 output .txt files, which can be visualized as a table.
+The first table, titled “outputfile_name.txt”, contains the original information from the tables plus the average copy number of each gene under each experimental condition (designated as Expt_1, Expt_2, etc.) in the order the experiments were provided in the input folder.
+The second table, titled “outputfile_name_information.txt”, contains the information provided for each gene separated by label for easy viewing.
 
 ##### 4. Heatmaps
 After producing the first two output tables, the program will ask the user if they would like to generate a heatmap for a given COG or KEGG code. 
-Entering a code after the prompt will generate a heatmap that shows the changes in CNVs under different conditions for genes identified with that code in the “Information” section of the original input tables.
+Entering a code after the prompt will generate a heatmap that shows the changes in CNVs under different conditions for genes identified with that code in the “Information” section of the original input tables. The intensity of the color in the heatmap corresponds to the change in CNV relative to the other conditions. The user may produce as many heatmaps as desired, until they respond "no" and exit the program.
