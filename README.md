@@ -18,8 +18,10 @@ The objective of the CONCA script is to investigate whether the copy number of a
  
  Example of “Information” formatting: ``ID=JHFGFCBP_00001;db_xref=COG:COG0419;inference=ab …``
  
- ##### 2. Running The Script
- Ensure that all .txt files with the experimental condition tables are together in a folder, with the control table as the first file in the folder. The program used to run the script is Python, at least version 3.8.8. If Python is installed and the input file is prepared, the following command can be run in the terminal:
+ ##### 2. Requirements & Running The Script
+ Ensure that all .txt files with the experimental condition tables are together in a folder, with the control table as the first file in the folder. The program used to run the script is Python, at least version 3.8.8. The script uses the following python modules: os, pandas, numpy, seaborn, and matplotlib.pyplot.
+ 
+ If Python is installed and the input file is prepared, the following command can be run in the terminal:
 ``
 python CONCA_script.py folder_name outputfile_name
 ``
